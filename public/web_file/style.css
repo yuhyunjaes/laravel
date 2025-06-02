@@ -2,6 +2,12 @@
     margin: 0 auto;
     padding: 0;
 }
+input[type=radio] {
+    display: none;
+}
+body {
+    position: relative;
+}
 .header_container {
     height: 70px;
 }
@@ -20,4 +26,108 @@
     width: 150px;
     height: 120px;
     object-fit: cover;
+}
+
+.dropdown-menu {
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: height.4s, opacity.4s;
+}
+#li_hover_event:hover ~ .dropdown-menu,
+.dropdown-menu:hover {
+    height: 200%;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.slide_container {
+    width: 100vw;
+    height: 500px;
+    overflow: hidden;
+}
+.slider {
+    width: calc(100% * 4);
+    height: 100%;
+    display: flex;
+    animation: 12s infinite linear slide1;
+}
+.slide {
+    width: calc(100% / 4);
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.slider .slide:nth-child(1),
+.slider .slide:nth-child(4) {
+    background-image: url(css_img/slide1.jpg);
+}
+.slider .slide:nth-child(2) {
+    background-image: url(css_img/slide2.jpg);
+}
+.slider .slide:nth-child(3) {
+    background-image: url(css_img/slide3.jpg);
+}
+.slider .slide:nth-child(2) p {
+    color: white;
+}
+
+.slide_con {
+    width: 1280px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.slide_text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+@keyframes slide1 {
+    0% {
+        margin-left: 0;
+    }
+    16% {
+        margin-left: 0;
+    }
+    33.33% {
+        margin-left: -100%;
+    }
+    49% {
+        margin-left: -100%;
+    }
+    66.66% {
+        margin-left: -200%;
+    }
+    82% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+#exampleModal1,
+#exampleModal2 {
+    backdrop-filter: blur(5px);
+}
+#modal1_open:checked ~ #exampleModal1,
+#modal2_open:checked ~ #exampleModal2 {
+    display: block;
+}
+#forr {
+    flex-wrap: wrap;
+}
+#mit {
+    border: none;
+}
+
+#exampleModal1 form input,
+#exampleModal2 form input,
+#exampleModal1 form button,
+#exampleModal2 form button {
+    height: 45px;
+    margin: 10px 0 10px 0;
 }
