@@ -50,7 +50,7 @@
                     <span class="fw-bold me-2">{{ Auth::user()->user_name }}님</span>
                     <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                         @csrf
-                        <button type="submit" class="btn btn-danger fw-bold">로그아웃</button>
+                        <button type="submit" class="btn btn-primary fw-bold">로그아웃</button>
                     </form>
                   @endauth
                   @guest
@@ -63,62 +63,6 @@
           </nav>
       </header>
   </div>
-  <main class="slide_container">
-    <div class="slider">
-      <div class="slide">
-        <div class="slide_con">
-          <div class="slide_text">
-            <p class="fs-2 fw-bold">
-            Better Give & Take
-            </p>
-            <p class="fs-6">
-            옴니채널 플랫폼 GIFTS로 <br>
-            전 세계 고객에게 선물의 가치를 높입니다.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide_con">
-          <div class="slide_text">
-            <p class="fs-2 fw-bold">
-            Life Style Platforms
-            </p>
-            <p class="fs-6">
-            고객과 가장 가까운 곳에서  <br>
-            고객에게 다양한 즐거움을 선물합니다.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide_con">
-          <div class="slide_text">
-            <p class="fs-2 fw-bold">
-            Online PLAYGROUND
-            </p>
-            <p class="fs-6">
-            업계 최초 당일 배송 서비스인 '오늘드림'으로 <br>
-            고객 니즈 충족과 고객 경험을 혁신합니다.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide_con">
-          <div class="slide_text">
-            <p class="fs-2 fw-bold">
-            Better Give & Take
-            </p>
-            <p class="fs-6">
-            옴니채널 플랫폼 GIFTS로 <br>
-            전 세계 고객에게 선물의 가치를 높입니다.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
 
   <input type="radio" name="modal2box" id="modal1_open">
   <input type="radio" name="modal2box" id="modal1_close">

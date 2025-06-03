@@ -52,4 +52,20 @@ class IndexController extends Controller
         Auth::logout();
         return redirect() -> route('index');
     }
+
+    public function manager() {
+        $users = User::all();
+        return view('manager', compact('users'));
+    }
+
+    public function deleteuser(Request $request) {
+        $id = $request->input('id');
+        $user = User::find($id);
+
+        if($user) {
+            $user->delete();
+            return response() -> json(['message' => true]);
+        }
+        return response() -> json(['message' => false], 404);
+    }
 }

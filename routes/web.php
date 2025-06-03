@@ -11,3 +11,7 @@ Route::post('/register', [IndexController::class, 'register'])->name('register')
 Route::post('/login', [IndexController::class, 'login'])->name('login');
 
 Route::post('/logout', [IndexController::class, 'logout'])->name('logout');
+
+Route::get('/manager', [IndexController::class, 'manager'])->name('manager');
+
+Route::post('/deleteuser', [IndexController::class, 'deleteuser'])->name('deleteuser');
