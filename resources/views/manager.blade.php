@@ -12,20 +12,31 @@
 <body>
     <div class="container w-100">
         <table class="table table-dark table-striped w-50 m-0 p-0">
+            <thead>
             <tr>
                 <th>회원 번호</th>
                 <th>이름</th>
                 <th>이메일</th>
                 <th>계정 생성일</th>
             </tr>
-            @foreach($users as $user)
-            <tr class="item" draggable="true">
-                <td class="item_id">{{ $user->id }}</td>
-                <td>{{ $user->user_name }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->created_at->format('Y-m-d') }}</td>
-            </tr>
-            @endforeach
+            </thead>
+            <tbody>
+                @foreach($users as $user)
+                <tr class="item" draggable="true">
+                    <td class="item_id">{{ $user->id }}</td>
+                    <td>{{ $user->user_name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->created_at->format('Y-m-d') }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+                <tr>
+                <td colspan="4" class="text-center">
+                {{ $users->links('pagination::bootstrap-4') }}
+                </td>
+                </tr>
+            </tfoot>
         </table>
 
         <div class="drop_box" ondragover="over(event)" ondrop="drop(event)">

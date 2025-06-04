@@ -112,7 +112,6 @@
               @csrf
               <input class="w-75 rounded-2" type="text" name="user_name" id="user_name" placeholder=" 회원 성명"> <br>
               <input class="w-75 rounded-2" type="text" name="email" id="email" placeholder=" 이메일"> <br>
-              <input class="w-75 rounded-2" type="text" name="user_id" id="user_id" placeholder=" 아이디"> <br>
               <input class="w-75 rounded-2" type="text" name="password" id="password" placeholder=" 비밀번호"> <br>
               <input class="w-75 rounded-2" type="text" name="password_check" id="password_check" placeholder=" 비밀번호 확인"> <br>
               <button class="btn btn-primary w-75 fw-bold" type="submit" id="mit">회원가입</button> <br>

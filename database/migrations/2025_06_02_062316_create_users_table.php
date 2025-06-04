@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();  // 기본 키 (id)
             $table->string('user_name');         // 성명
-            $table->string('user_id')->unique(); // 아이디
             $table->string('password');     // 비밀번호
             $table->string('email')->unique();   // 이메일
             $table->timestamps();                // created_at, updated_at

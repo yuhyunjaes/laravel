@@ -20,7 +20,6 @@ class IndexController extends Controller
         $data = $request->validate([
             'user_name'     => ['required','string','max:255'],
             'email'         => ['required','email','unique:users,email'],
-            'user_id'       => ['required','string','unique:users,user_id','max:50'],
             'password' => ['required','min:6'],
         ]);
 
@@ -28,7 +27,6 @@ class IndexController extends Controller
         $user = User::create([
             'user_name' => $data['user_name'],
             'email' => $data['email'],
-            'user_id' => $data['user_id'],
             'password' => Hash::make($data['password']), // 비밀번호 암호화
         ]);
 
@@ -54,7 +52,7 @@ class IndexController extends Controller
     }
 
     public function manager() {
-        $users = User::all();
+        $users = User::paginate(5);
         return view('manager', compact('users'));
     }
 
